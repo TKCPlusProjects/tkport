@@ -1,0 +1,25 @@
+name: Init
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  init:
+    name: init
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Local Info
+      run: |
+        echo LOC_NAME="$(basename ${GITHUB_REPOSITORY})" >> ${GITHUB_ENV}
+        
+    - name: Local Info
+      run: |
+        if [ -n $(find . -name TKPT_TPL_NAME) ];then
+          exit 0
+        fi
+        echo TKPT_TPL_NAME -> ${{ env.LOC_NAME }}
+        
