@@ -18,7 +18,7 @@
 
 #include <functional>
 
-/// @namespace Namespace TKHT
+/// @namespace Namespace tkht
 namespace tkht {
 /// @namespace Namespace TKPORT_TMPL_NAME
 namespace TKPORT_TMPL_NAME {
